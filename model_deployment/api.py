@@ -8,8 +8,8 @@ import os
 
 def predict_genres(movie):
     
-    model = joblib.load(os.path.dirname(__file__) + '\\genremovies.pkl') 
-    vect = joblib.load(os.path.dirname(__file__) + '\\vectorizer_tfid.pkl')
+    model = joblib.load(os.path.dirname(__file__) + '/genremovies.pkl') 
+    vect = joblib.load(os.path.dirname(__file__) + '/vectorizer_tfid.pkl')
     col_p = ['Action','Adventure','Animation','Biography','Comedy','Crime','Documentary','Drama','Family','Fantasy','Film-Noir','History','Horror','Music','Musical','Mystery','News','Romance','Sci-Fi','Short','Sport','Thriller','War','Western']
     
     if movie != 'https://github.com/albahnsen/MIAD_ML_and_NLP/raw/main/datasets/dataTesting.zip':
@@ -46,7 +46,7 @@ parser.add_argument(
     'Descripcion', 
     type=str, 
     required=True, 
-    help='Descripcion de pelicula, solo texto (en ingles). Sin comillas.', 
+    help='Descripcion de pelicula, solo texto (en ingles). Entre comillas simples.', 
     location='args')
 
 resource_fields = api.model('Resource', {
